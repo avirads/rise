@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise - Processor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>Rise</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="processor.html" class="active"><i class="fa-solid fa-microchip"></i> Processor</a></li>
+                <li><a href="dashboard.html"><i class="fa-solid fa-table-columns"></i> Dashboard</a></li>
+                <li><a href="leaderboard.html"><i class="fa-solid fa-trophy"></i> Leaderboard</a></li>
+            </ul>
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/150?img=60" alt="Admin">
+                <div class="user-info">
+                    <span class="name">Admin</span>
+                    <span class="role">Head of Product</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Workflow Processor</h1>
+                <div class="status-indicator">
+                    <span class="dot"></span> System Operational
+                </div>
+            </header>
+
+            <div class="processor-container">
+                <div class="workflow-display">
+                    <div class="workflow-card">
+                        <h3>Current Workflow</h3>
+                        <div class="workflow-image-container">
+                            <img src="workflow_diagram.png" alt="Workflow Diagram">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-interface">
+                    <div class="chat-header">
+                        <h3>Command Center</h3>
+                    </div>
+                    <div class="chat-history">
+                        <div class="message system">
+                            <p>Welcome to Rise. Ready to generate marketing assets.</p>
+                            <span class="time">10:00 AM</span>
+                        </div>
+                        <div class="message user">
+                            <p>Generate a promotional video for the new 'X-100' launch.</p>
+                            <span class="time">10:05 AM</span>
+                        </div>
+                        <div class="message system">
+                            <p>Processing request... Initiating Rive workflow.</p>
+                            <span class="time">10:05 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn" title="Generate Video">
+                            <i class="fa-solid fa-video"></i>
+                            <span>Video</span>
+                        </button>
+                        <button class="action-btn" title="Generate Image">
+                            <i class="fa-regular fa-image"></i>
+                            <span>Image</span>
+                        </button>
+                        <button class="action-btn" title="Generate Article">
+                            <i class="fa-regular fa-file-lines"></i>
+                            <span>Article</span>
+                        </button>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <input type="text" placeholder="Enter command or prompt...">
+                        <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Handle action button selection
+        const actionButtons = document.querySelectorAll('.action-btn');
+        const sendBtn = document.querySelector('.send-btn');
+        const inputField = document.querySelector('.chat-input-area input');
+        let selectedAction = null;
+
+        actionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove selected class from all buttons
+                actionButtons.forEach(btn => btn.classList.remove('selected'));
+
+                // Add selected class to clicked button
+                button.classList.add('selected');
+
+                // Store the selected action
+                selectedAction = button.querySelector('span').textContent;
+            });
+        });
+
+        // Handle send button click
+        sendBtn.addEventListener('click', () => {
+            if (inputField.value.trim() !== '') {
+                // Clear selection after sending
+                actionButtons.forEach(btn => btn.classList.remove('selected'));
+                selectedAction = null;
+
+                // Clear input (optional)
+                // inputField.value = '';
+            }
+        });
+
+        // Handle Enter key press
+        inputField.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && inputField.value.trim() !== '') {
+                // Clear selection after sending
+                actionButtons.forEach(btn => btn.classList.remove('selected'));
+                selectedAction = null;
+
+                // Clear input (optional)
+                // inputField.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

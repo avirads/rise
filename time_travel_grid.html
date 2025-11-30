@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Travel Portraits</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f0f13;
+            --card-bg: #1a1a20;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --accent: #d4af37;
+            /* Gold accent */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, #fff, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1 / 1.2;
+            /* Portrait aspect ratio */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            padding: 1.5rem 1rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .decade-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .style-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .placeholder {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: #15151a;
+            border: 2px dashed #333;
+            color: #555;
+        }
+
+        .placeholder-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .placeholder-text {
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Chronological Portraits</h1>
+        <p class="subtitle">A journey through time, from 1880s to the future.</p>
+    </header>
+
+    <div class="grid-container">
+        <!-- 1880s -->
+        <div class="card">
+            <img src="assets/time_travel/portrait_1880s_1764183112894.png" alt="1880s Portrait" class="card-image">
+            <div class="card-overlay">
+                <div>
+                    <div class="decade-label">1880s</div>
+                    <div class="style-label">Victorian</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1890s -->
+        <div class="card">
+            <img src="assets/time_travel/portrait_1890s_1764183128986.png" alt="1890s Portrait" class="card-image">
+            <div class="card-overlay">
+                <div>
+                    <div class="decade-label">1890s</div>
+                    <div class="style-label">Late Victorian</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1900s -->
+        <div class="card">
+            <img src="assets/time_travel/portrait_1900s_1764183142035.png" alt="1900s Portrait" class="card-image">
+            <div class="card-overlay">
+                <div>
+                    <div class="decade-label">1900s</div>
+                    <div class="style-label">Edwardian</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1910s -->
+        <div class="card">
+            <img src="assets/time_travel/portrait_1910s_1764183160421.png" alt="1910s Portrait" class="card-image">
+            <div class="card-overlay">
+                <div>
+                    <div class="decade-label">1910s</div>
+                    <div class="style-label">WWI Era</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1920s -->
+        <div class="card">
+            <img src="assets/time_travel/portrait_1920s_1764183186568.png" alt="1920s Portrait" class="card-image">
+            <div class="card-overlay">
+                <div>
+                    <div class="decade-label">1920s</div>
+                    <div class="style-label">Roaring Twenties</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1930s -->
+        <div class="card">
+            <img src="assets/time_travel/portrait_1930s_1764183200700.png" alt="1930s Portrait" class="card-image">
+            <div class="card-overlay">
+                <div>
+                    <div class="decade-label">1930s</div>
+                    <div class="style-label">Golden Age</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1940s -->
+        <div class="card">
+            <img src="assets/time_travel/portrait_1940s_1764183215177.png" alt="1940s Portrait" class="card-image">
+            <div class="card-overlay">
+                <div>
+                    <div class="decade-label">1940s</div>
+                    <div class="style-label">Noir / WWII</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1950s (Missing) -->
+        <div class="card placeholder">
+            <div class="placeholder-icon">⏳</div>
+            <div class="decade-label" style="color: #555;">1950s</div>
+            <div class="placeholder-text">Generation Pending<br>(Quota Limit Reached)</div>
+        </div>
+
+        <!-- 1960s -->
+        <div class="card placeholder">
+            <div class="placeholder-icon">⏳</div>
+            <div class="decade-label" style="color: #555;">1960s</div>
+            <div class="placeholder-text">Generation Pending</div>
+        </div>
+
+        <!-- 1970s -->
+        <div class="card placeholder">
+            <div class="placeholder-icon">⏳</div>
+            <div class="decade-label" style="color: #555;">1970s</div>
+            <div class="placeholder-text">Generation Pending</div>
+        </div>
+
+        <!-- 1980s -->
+        <div class="card placeholder">
+            <div class="placeholder-icon">⏳</div>
+            <div class="decade-label" style="color: #555;">1980s</div>
+            <div class="placeholder-text">Generation Pending</div>
+        </div>
+
+        <!-- 1990s -->
+        <div class="card placeholder">
+            <div class="placeholder-icon">⏳</div>
+            <div class="decade-label" style="color: #555;">1990s</div>
+            <div class="placeholder-text">Generation Pending</div>
+        </div>
+
+        <!-- 2000s -->
+        <div class="card placeholder">
+            <div class="placeholder-icon">⏳</div>
+            <div class="decade-label" style="color: #555;">2000s</div>
+            <div class="placeholder-text">Generation Pending</div>
+        </div>
+
+        <!-- 2010s -->
+        <div class="card placeholder">
+            <div class="placeholder-icon">⏳</div>
+            <div class="decade-label" style="color: #555;">2010s</div>
+            <div class="placeholder-text">Generation Pending</div>
+        </div>
+
+        <!-- 2020s -->
+        <div class="card placeholder">
+            <div class="placeholder-icon">⏳</div>
+            <div class="decade-label" style="color: #555;">2020s</div>
+            <div class="placeholder-text">Generation Pending</div>
+        </div>
+
+        <!-- 2030s -->
+        <div class="card placeholder">
+            <div class="placeholder-icon">⏳</div>
+            <div class="decade-label" style="color: #555;">2030s</div>
+            <div class="placeholder-text">Generation Pending</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
